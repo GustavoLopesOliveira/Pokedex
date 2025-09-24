@@ -16,4 +16,4 @@ Uma Pokédex interativa desenvolvida com **HTML, CSS e JavaScript**, que consome
 ## 🎮 Como usar
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repo.git
+   git clone https://github.com/GustavoLopesOliveira/Pokedex.git
