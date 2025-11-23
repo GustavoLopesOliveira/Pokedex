@@ -3,18 +3,17 @@ const url = "https://pokeapi.co/api/v2/pokemon/"
 const buttonLeft = document.getElementById('buttonLeft')
 const buttonRight = document.getElementById('buttonRight')
 const containerCards = document.getElementById('containerCards')
-const min = 1
+let min = 1
 
 
 
-window.onload( () => { 
-    loadPage()
-})
+window.onload = loadPage
 
 buttonLeft.addEventListener('click',() => {
-    min = min - 20
-    if(min <= 0) min = 1
-    loadPage()
+    if(min != 1){    
+        min = min - 20
+        loadPage()
+    }
 })
 
 buttonRight.addEventListener('click', () => {
@@ -25,7 +24,7 @@ buttonRight.addEventListener('click', () => {
 async function loadPage(){
     containerCards.innerHTML = ''
 
-    for(let i = min; i <= min + 20; i++){
+    for(let i = min; i < min + 20; i++){
         let data = await fetchData(i)
         createCard(data)
     }
@@ -40,13 +39,13 @@ async function fetchData(id){
 function createCard(data){
     const newDiv = `
         <div class = 'card'>
-            <img src = ${data.sprites.front_default}>
+            <img src = "${data.sprites.front_default}">
             <div class = 'cardText'>
-                <p class = 'cardTextName'> ${data.name} </p>
+                <h3 class = 'cardTextName'> ${data.name} </h3>
             </div>
         </div>
     ` 
-    containerCards.append(newDiv)
+    containerCards.innerHTML += newDiv
 }
 
 

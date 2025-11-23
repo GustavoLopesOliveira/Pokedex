@@ -1,6 +1,7 @@
 :root{
   --bg-color: rgb(228, 34, 34);
-  
+  --card-color: white;
+  --footer-color: black;
 }
 
 *{
@@ -13,6 +14,51 @@ body{
   background-color: var(--bg-color);
 }
 
+main{
+  display: flex;
+  flex-direction:  row;
+  flex-wrap: nowrap;
+
+  width: 100%;
+  height: 90%;
+}
+
+button {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Spacing inside the button */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Changes cursor to a pointer on hover */
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+#containerCards{
+  display: flex;
+  flex-wrap: wrap;
+  
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.card{
+  display: flex;
+  flex-direction: row;
+
+
+  width: 250px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+
+  background-color: var(--card-color);
+}
+
 footer{
   position: fixed;
   width: 100%;
@@ -22,6 +68,8 @@ footer{
 }
 
 footer p{
+  padding: 5px;
   text-align: center;
+  align-items: center;
 }
 
