@@ -40,7 +40,10 @@ async function fetchData(id){
 function createCard(data){
     const newDiv = `
         <div class = 'card'>
-            
+            <img src = ${data.sprites.front_default}>
+            <div class = 'cardText'>
+                <p class = 'cardTextName'> ${data.name} </p>
+            </div>
         </div>
     ` 
     containerCards.append(newDiv)
